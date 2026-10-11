@@ -12,7 +12,7 @@
   background: linear-gradient(90deg, #080808b0, transparent 70%), linear-gradient(0deg, #080808, transparent 28%);
 }
 
-/* Misma imagen y encuadre: la silueta se superpone sin otra descarga. */
+/* Recorte transparente del entrenador: profundidad con una silueta real. */
 .hero-person {
   position: absolute;
   inset: 0;
@@ -25,7 +25,6 @@
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  clip-path: polygon(72% 2%, 81% 2%, 84% 8%, 84% 19%, 81% 25%, 85% 29%, 89% 31%, 92% 41%, 93% 54%, 94% 65%, 97% 92%, 97% 100%, 51% 100%, 52% 87%, 50% 81%, 51% 66%, 52% 54%, 53% 44%, 56% 34%, 64% 27%, 70% 24%, 69% 17%, 69% 7%);
 }
 
 .hero-copy {
@@ -54,36 +53,6 @@
   z-index: 0;
 }
 
-/* Relleno debajo del personaje y contorno encima, en el mismo lugar. */
-.hero-title-stack {
-  position: relative;
-}
-
-.hero-title-outline {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  width: 100%;
-  pointer-events: none;
-  font-family: var(--heading-font);
-  font-size: clamp(5rem, 11vw, 10rem);
-  font-weight: 800;
-  text-transform: uppercase;
-  line-height: .98;
-  letter-spacing: -.025em;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--text);
-}
-
-.outline-line {
-  display: block;
-}
-
-.outline-accent {
-  -webkit-text-stroke-color: var(--accent);
-}
-
 .hero-person {
   mask-image: linear-gradient(#000 75%, transparent);
 }
@@ -97,8 +66,7 @@
   font-size: clamp(4rem, 12vw, 12rem);
   font-weight: 800;
   line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 1px #f2ebdd35;
+  color: #f2ebdd50;
   pointer-events: none;
 }
 
@@ -212,14 +180,6 @@
   .title-line:nth-child(4) {
     animation-delay: 180ms;
   }
-
-  .outline-line {
-    animation: appear 400ms ease-out both;
-  }
-
-  .outline-line:nth-child(2) { animation-delay: 60ms; }
-  .outline-line:nth-child(3) { animation-delay: 120ms; }
-  .outline-line:nth-child(4) { animation-delay: 180ms; }
 }
 
 @media (max-width: 700px) {
@@ -245,25 +205,21 @@
     background: linear-gradient(0deg, #080808 5%, #080808a0 25%, transparent 65%), linear-gradient(90deg, #08080880, transparent);
   }
 
-  .hero-person img {
-    clip-path: polygon(20% 2%, 70% 2%, 85% 22%, 72% 31%, 96% 40%, 100% 100%, 0 100%, 0 47%, 12% 34%, 24% 26%);
-  }
-
   .hero-inner {
     padding-block: 44px 40px;
   }
 
   .hero h1 {
     font-size: clamp(3.8rem, 15vw, 6rem);
-    margin-top: 120px;
-  }
-
-  .hero-title-outline {
-    font-size: clamp(3.8rem, 15vw, 6rem);
+    margin-top: 24px;
   }
 
   .hero h1 .title-line {
     z-index: 0;
+  }
+
+  .hero h1 .title-line:not(:first-child) {
+    z-index: 2;
   }
 
   .hero-copy {
@@ -299,3 +255,4 @@
     margin-bottom: 48px;
   }
 }
+
