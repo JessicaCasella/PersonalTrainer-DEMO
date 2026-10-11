@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal Trainer: entrenamiento personalizado presencial en Montevideo y online. Conocé la propuesta y agendá tu evaluación gratis.">
+    <meta name="theme-color" content="#080808">
+    <title>Personal Trainer | Entrenamiento personalizado</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#inicio" aria-label="Personal Trainer, inicio">PERSONAL <span>TRAINER</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" hidden>Menú <span aria-hidden="true">☰</span></button>
+        <nav id="navigation" class="navigation" aria-label="Navegación principal">
+          <a href="#metodo">Método</a>
+          <a href="#objetivos">Objetivos</a>
+          <a href="#filosofia">Mi enfoque</a>
+          <a class="button button-small" href="#contacto">Contacto <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <section id="inicio" class="hero" aria-labelledby="hero-title">
+        <picture class="hero-art">
+          <source media="(max-width: 700px)" srcset="assets/trainer-mobile.webp">
+          <img src="assets/trainer-desktop.webp" width="1536" height="1024" alt="Ilustración conceptual de un entrenador con una mancuerna, en un gimnasio iluminado en tonos cálidos." fetchpriority="high">
+        </picture>
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Montevideo · Presencial + online</p>
+            <h1 id="hero-title">Entrená con<br>un plan.<br><span>Avanzá con<br><span class="ink-underline">propósito.</span></span></h1>
+            <p class="hero-description">Entrenamiento personalizado presencial en Montevideo y online. Un plan para vos, acompañado en cada paso.</p>
+            <a class="button" href="#contacto">Agendá tu evaluación gratis <span aria-hidden="true">→</span></a>
+            <p class="hero-note">Tu objetivo. Tu ritmo. Tu próximo paso.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="objetivos" class="section objectives" aria-labelledby="objectives-title">
+        <div class="container">
+          <p class="eyebrow" data-reveal>Entrenamiento a tu medida</p>
+          <h2 id="objectives-title" data-reveal>Tu objetivo. <span>Tu plan.</span></h2>
+          <div class="objective-grid">
+            <article class="objective" data-reveal>
+              <span class="section-number" aria-hidden="true">01</span>
+              <h3>Fuerza</h3>
+              <p>Construí una base sólida y progresá con un entrenamiento adaptado a tu punto de partida.</p>
+            </article>
+            <article class="objective" data-reveal>
+              <span class="section-number" aria-hidden="true">02</span>
+              <h3>Condición física</h3>
+              <p>Sumá movimiento a tu día a día y trabajá tu resistencia, a tu propio ritmo.</p>
+            </article>
+            <article class="objective" data-reveal>
+              <span class="section-number" aria-hidden="true">03</span>
+              <h3>Seguimiento personalizado</h3>
+              <p>Un acompañamiento para sostener la constancia y ajustar el plan en el camino.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="filosofia" class="section philosophy" aria-labelledby="philosophy-title">
+        <figure class="container comic-story" data-reveal>
+          <picture>
+            <source media="(max-width: 700px)" srcset="assets/training-story-mobile.webp">
+            <img src="assets/training-story.webp" width="1536" height="1024" loading="lazy" alt="Tres viñetas ilustradas: prepararse para entrenar, trabajar con una mancuerna y descansar después del esfuerzo.">
+          </picture>
+          <figcaption>La constancia se construye. <span>Un día a la vez.</span></figcaption>
+        </figure>
+        <div class="container philosophy-grid">
+          <div data-reveal>
+            <p class="eyebrow">Nuestro enfoque</p>
+            <h2 id="philosophy-title">Cuidarte hoy.<br><span>Vivir mejor mañana.</span></h2>
+          </div>
+          <div class="philosophy-copy" data-reveal>
+            <p class="lead">Entrenar también es pensar en tu futuro.</p>
+            <p>Cuidar tu cuerpo, construir hábitos y encontrar una forma de moverte que puedas sostener. La propuesta es avanzar con un plan que se adapte a vos.</p>
+            <a class="text-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Explorá Instagram <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="metodo" class="section method" aria-labelledby="method-title">
+        <div class="container">
+          <p class="eyebrow" data-reveal>Paso a paso</p>
+          <h2 id="method-title" data-reveal>Un camino <span>para vos.</span></h2>
+          <ol class="method-list">
+            <li data-reveal><span class="section-number" aria-hidden="true">01</span><div><h3>Nos conocemos</h3><p>El primer paso es conversar sobre tus objetivos y tu punto de partida.</p></div></li>
+            <li data-reveal><span class="section-number" aria-hidden="true">02</span><div><h3>Armamos tu plan</h3><p>Una propuesta de entrenamiento personalizada para acompañar tu proceso.</p></div></li>
+            <li data-reveal><span class="section-number" aria-hidden="true">03</span><div><h3>Avanzamos y ajustamos</h3><p>Seguimiento para revisar el progreso y adaptar el entrenamiento.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="contacto" class="section contact" aria-labelledby="contact-title">
+        <div class="container contact-inner" data-reveal>
+          <p class="eyebrow">Tu historia empieza con un paso</p>
+          <h2 id="contact-title">Empezá <span>con un plan.</span></h2>
+          <p>Entrenamiento presencial en Montevideo y online.<br>Agendá tu evaluación gratis.</p>
+          <a class="button" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Visitá Instagram <span aria-hidden="true">↗</span></a>
+          <p class="demo-note">Demo de diseño. La reserva está pendiente y los enlaces a redes son generales, sin un perfil asociado. La ilustración es conceptual.</p>
+        </div>
+      </section>
+    </main>
+
+    <aside class="mobile-booking" aria-label="Evaluación gratis">
+      <a class="button" href="#contacto">Agendá tu evaluación gratis <span aria-hidden="true">→</span></a>
+    </aside>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand" href="#inicio">PERSONAL <span>TRAINER</span></a>
+        <p>Montevideo · Presencial + online</p>
+        <nav class="social-links" aria-label="Redes sociales (enlaces generales)">
+          <a class="text-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">TikTok <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
+

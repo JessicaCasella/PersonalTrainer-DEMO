@@ -1,0 +1,624 @@
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("assets/barlow-condensed-800.woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 1. Colores, tipografía y estilos compartidos. */
+:root {
+  color-scheme: dark;
+  --background: #080808;
+  --surface: #141311;
+  --text: #f2ebdd;
+  --muted: #c7bfb2;
+  --accent: #f26922;
+  --border: #39352f;
+  --heading-font: "Barlow Condensed", Impact, "Arial Narrow", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+h1, h2 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: .98;
+}
+
+h1 {
+  font-size: clamp(3.6rem, 6.5vw, 6.4rem);
+  letter-spacing: -.025em;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: clamp(2.7rem, 4vw, 4rem);
+  margin-bottom: 28px;
+}
+
+h1 span, h2 span, .brand span {
+  color: var(--accent);
+}
+
+h3 {
+  font-family: var(--heading-font);
+  font-size: 1.75rem;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+}
+
+.container {
+  width: min(1200px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: 80px;
+  border-top: 1px solid var(--border);
+}
+
+.eyebrow {
+  color: var(--accent);
+  text-transform: uppercase;
+  font-size: .75rem;
+  letter-spacing: .14em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 48px;
+  padding: 14px 22px;
+  background: var(--accent);
+  color: #080808;
+  font-size: .85rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.button span, .text-link span {
+  display: inline-block;
+  transition: transform 180ms ease;
+}
+
+.button:hover span, .button:focus-visible span, .text-link:hover span, .text-link:focus-visible span {
+  transform: translateX(4px);
+}
+
+.button-small {
+  min-height: 44px;
+  padding: 10px 18px;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent);
+  min-height: 44px;
+  font-size: .9rem;
+}
+
+.skip-link {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+  padding: 12px;
+  background: var(--text);
+  color: var(--background);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* 2. Encabezado y navegación. El menú funciona también sin JavaScript. */
+.site-header {
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 88px;
+}
+
+.brand {
+  font-family: var(--heading-font);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: .85rem;
+}
+
+.navigation > a:not(.button) {
+  padding-block: 12px;
+}
+
+.navigation > a:not(.button):hover {
+  color: var(--accent);
+}
+
+.menu-toggle {
+  min-height: 44px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* 3. Portada: ilustración estática y texto real sobre un fondo oscuro. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hero-art {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.hero-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, #080808 0%, #080808ef 24%, #08080880 48%, transparent 70%), linear-gradient(0deg, #080808 0%, transparent 22%);
+}
+
+.hero-inner {
+  padding-block: 72px 56px;
+}
+
+.hero-copy {
+  width: min(56%, 620px);
+}
+
+.hero-description {
+  max-width: 420px;
+  color: var(--muted);
+  margin-bottom: 28px;
+  font-size: 1.05rem;
+}
+
+.hero-note {
+  margin: 18px 0 0;
+  font-size: .8rem;
+  color: var(--muted);
+}
+
+/* 4. Objetivos, filosofía, método y contacto. */
+.objective-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.objective {
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: transform 180ms ease;
+  position: relative;
+  border-top: 3px solid var(--text);
+}
+
+.objective::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+}
+
+.eyebrow {
+  border-left: 3px solid var(--accent);
+  padding-left: 12px;
+}
+
+.contact .eyebrow {
+  display: inline-block;
+}
+
+.hero h1 {
+  text-shadow: 2px 3px 0 #000;
+}
+
+.ink-underline {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.ink-underline::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 6px;
+  background: var(--text);
+  clip-path: polygon(0 30%, 97% 0, 100% 60%, 3% 100%);
+}
+
+.mobile-booking {
+  display: none;
+}
+
+.comic-story {
+  position: relative;
+  margin-block: 0 56px;
+  border: 2px solid var(--text);
+}
+
+.comic-story img {
+  width: 100%;
+  height: auto;
+}
+
+.comic-story figcaption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  max-width: calc(100% - 40px);
+  padding: 12px 18px;
+  background: var(--text);
+  color: var(--background);
+  border: 2px solid var(--background);
+  font-family: var(--heading-font);
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.comic-story figcaption span {
+  display: block;
+}
+
+.objective:hover {
+  transform: translateY(-2px);
+}
+
+.section-number {
+  display: block;
+  font-family: var(--heading-font);
+  color: var(--accent);
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+}
+
+.objective p, .philosophy-copy p, .method-list p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.philosophy {
+  background: linear-gradient(115deg, #1c120d, var(--background) 65%);
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.philosophy h2 {
+  margin-bottom: 0;
+}
+
+.philosophy-copy .lead {
+  color: var(--text);
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+.philosophy-copy .text-link {
+  margin-top: 24px;
+}
+
+.method-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.method-list li {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  padding-block: 26px;
+  gap: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.method-list .section-number {
+  margin: 0;
+}
+
+.method-list h3 {
+  margin-bottom: 8px;
+}
+
+.contact {
+  background: radial-gradient(ellipse at 50% 100%, #2a170d, var(--background) 75%);
+  text-align: center;
+}
+
+.contact-inner {
+  max-width: 760px;
+}
+
+.contact p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+.contact .demo-note {
+  max-width: 540px;
+  margin: 22px auto 0;
+  font-size: .8rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding-block: 30px;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-inner p {
+  margin: 0;
+  font-size: .8rem;
+  color: var(--muted);
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+/* 5. Movimiento: solo opacidad y desplazamientos breves, sin bucles. */
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-copy {
+    animation: appear 400ms ease-out;
+  }
+
+  .is-revealed {
+    animation: appear 350ms ease-out both;
+  }
+
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+
+}
+
+/* 6. Mobile: texto y CTA primero;
+ilustración después. */
+@media (max-width: 700px) {
+  body {
+    padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+  }
+
+  html {
+    scroll-padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .mobile-booking {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    display: block;
+    padding: 12px 20px calc(12px + env(safe-area-inset-bottom, 0px));
+    background: var(--background);
+    border-top: 1px solid var(--border);
+  }
+
+  .mobile-booking .button {
+    width: 100%;
+  }
+
+  .container {
+    width: calc(100% - 40px);
+  }
+
+  .section {
+    padding-block: 52px;
+  }
+
+  .header-inner {
+    min-height: 76px;
+    flex-wrap: wrap;
+    gap: 0;
+    padding-block: 16px;
+  }
+
+  .brand {
+    font-size: 1.7rem;
+  }
+
+  .navigation {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    padding-top: 18px;
+  }
+
+  .navigation > a {
+    min-height: 44px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-inner {
+    order: 0;
+    padding-block: 40px 28px;
+  }
+
+  .hero-copy {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: clamp(3.2rem, 12vw, 5rem);
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-copy .button {
+    display: none;
+  }
+
+  .hero-art {
+    position: relative;
+    inset: auto;
+    order: 1;
+    z-index: -2;
+    height: 340px;
+  }
+
+  .hero-art img {
+    object-position: 75% center;
+  }
+
+  .hero::after {
+    inset: auto 0 0;
+    height: 340px;
+    background: linear-gradient(0deg, #080808, transparent 25%, transparent 85%, #080808);
+  }
+
+  .objective-grid, .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .objective {
+    padding: 24px;
+  }
+
+  .philosophy-grid {
+    gap: 30px;
+  }
+
+  .method-list li {
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+  }
+
+  .contact .button {
+    width: 100%;
+  }
+
+
+}
+
+
