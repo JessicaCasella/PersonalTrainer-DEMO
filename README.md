@@ -6,6 +6,9 @@ Landing estática en español, con estética de novela gráfica adulta. HTML, CS
 
 - `index.html`: contenido, navegación y secciones.
 - `styles.css`: estilos organizados en bloques numerados, responsive y movimiento reducido.
+- `comic-experiment.css`: portada por líneas, texto en contorno y viñetas independientes de la rama experimental.
+
+La portada experimental superpone un recorte transparente del entrenador al texto con relleno. No usa contorno ni un polígono aproximado: el personaje tapa únicamente las letras que se cruzan con su silueta. En mobile se limita la superposición a la primera línea para mantener la lectura. Los recortes WebP están en assets/trainer-cutout.webp y assets/trainer-cutout-mobile.webp, generados con la herramienta integrada de imágenes con el prompt de extracción del fondo y conservación de pose, posición y encuadre.
 - `script.js`: menú mobile y aparición de secciones.
 - `assets/`: ilustración optimizada y fuentes locales.
 - `DESIGN_BRIEF.md`: decisiones de diseño y datos pendientes.
@@ -49,5 +52,6 @@ Fuente: Barlow Condensed, peso 800, distribuida bajo SIL Open Font License. Ver 
 
 ## Git
 
-La carpeta recibida no tiene `.git`. No se inicializó ni se sincronizó el repositorio remoto en esta implementación.
+La versión base está en `main`. El experimento de portada y viñetas está en `codex/comic-motion`, en https://github.com/JessicaCasella/PersonalTrainer-DEMO.
+
 

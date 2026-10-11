@@ -7,6 +7,7 @@
     <meta name="theme-color" content="#080808">
     <title>Personal Trainer | Entrenamiento personalizado</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="comic-experiment.css">
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -30,10 +31,21 @@
           <source media="(max-width: 700px)" srcset="assets/trainer-mobile.webp">
           <img src="assets/trainer-desktop.webp" width="1536" height="1024" alt="Ilustración conceptual de un entrenador con una mancuerna, en un gimnasio iluminado en tonos cálidos." fetchpriority="high">
         </picture>
+        <picture class="hero-person" aria-hidden="true">
+          <source media="(max-width: 700px)" srcset="assets/trainer-cutout-mobile.webp">
+          <img src="assets/trainer-cutout.webp" width="1536" height="1024" alt="">
+        </picture>
         <div class="container hero-inner">
           <div class="hero-copy">
             <p class="eyebrow">Montevideo · Presencial + online</p>
-            <h1 id="hero-title">Entrená con<br>un plan.<br><span>Avanzá con<br><span class="ink-underline">propósito.</span></span></h1>
+            <div class="hero-title-stack">
+              <h1 id="hero-title">
+                <span class="title-line">Entrená con</span>
+                <span class="title-line">un plan.</span>
+                <span class="title-line title-accent">Avanzá con</span>
+                <span class="title-line title-accent"><span class="ink-underline">propósito.</span></span>
+              </h1>
+            </div>
             <p class="hero-description">Entrenamiento personalizado presencial en Montevideo y online. Un plan para vos, acompañado en cada paso.</p>
             <a class="button" href="#contacto">Agendá tu evaluación gratis <span aria-hidden="true">→</span></a>
             <p class="hero-note">Tu objetivo. Tu ritmo. Tu próximo paso.</p>
@@ -66,13 +78,21 @@
       </section>
 
       <section id="filosofia" class="section philosophy" aria-labelledby="philosophy-title">
-        <figure class="container comic-story" data-reveal>
-          <picture>
-            <source media="(max-width: 700px)" srcset="assets/training-story-mobile.webp">
-            <img src="assets/training-story.webp" width="1536" height="1024" loading="lazy" alt="Tres viñetas ilustradas: prepararse para entrenar, trabajar con una mancuerna y descansar después del esfuerzo.">
-          </picture>
-          <figcaption>La constancia se construye. <span>Un día a la vez.</span></figcaption>
-        </figure>
+        <div class="container comic-sequence" aria-label="Una historia de constancia">
+          <figure class="comic-panel panel-prepare" data-reveal>
+            <img src="assets/training-story.webp" srcset="assets/training-story-mobile.webp 750w, assets/training-story.webp 1536w" sizes="(max-width: 700px) 900px, 1536px" width="1536" height="1024" loading="lazy" alt="El entrenador se prepara atando sus zapatillas.">
+            <figcaption><span>01 / Preparación</span>Todo empieza<br>con una decisión.</figcaption>
+          </figure>
+          <figure class="comic-panel panel-train" data-reveal>
+            <img src="assets/training-story.webp" srcset="assets/training-story-mobile.webp 750w, assets/training-story.webp 1536w" sizes="(max-width: 700px) 900px, 1536px" width="1536" height="1024" loading="lazy" alt="El entrenador trabaja con una mancuerna.">
+            <figcaption><span>02 / Entrenamiento</span>Un paso más.<br>A tu ritmo.</figcaption>
+          </figure>
+          <figure class="comic-panel panel-rest" data-reveal>
+            <img src="assets/training-story.webp" srcset="assets/training-story-mobile.webp 750w, assets/training-story.webp 1536w" sizes="(max-width: 700px) 900px, 1536px" width="1536" height="1024" loading="lazy" alt="El entrenador descansa después de la sesión.">
+            <figcaption><span>03 / Recuperación</span>Descansar también<br>es parte del plan.</figcaption>
+          </figure>
+        </div>
+        <div class="story-statement" data-reveal>La constancia se construye. <span>Un día a la vez.</span></div>
         <div class="container philosophy-grid">
           <div data-reveal>
             <p class="eyebrow">Nuestro enfoque</p>
@@ -126,4 +146,5 @@
     </footer>
   </body>
 </html>
+
 
