@@ -44,6 +44,8 @@ Lighthouse y las métricas LCP, CLS e INP siguen pendientes. Los presupuestos de
 
 ## Recursos visuales
 
+La portada mobile conserva los 1536 × 1024 px originales en WebP de calidad 94. La composición de fondo completo amplía la imagen para cubrir una sección vertical; la versión anterior de 900 × 600 px perdía nitidez. Fondo y recorte conservan las mismas dimensiones para alinear las capas.
+
 Ilustración creada con la herramienta integrada de generación de imágenes y optimizada a WebP. Prompt resumido: entrenador conceptual adulto con cabello corto, barba y brazos tatuados, mancuerna, gimnasio oscuro, tinta detallada y luz naranja lateral; sin textos ni logos, con espacio oscuro a la izquierda.
 
 Segunda ilustración en `assets/training-story.webp` y su versión mobile: secuencia de tres viñetas de preparación, ejercicio y descanso, con tinta detallada y luz cálida. Generada con la misma herramienta; sin textos incrustados y con carga diferida. El recuadro narrativo es texto HTML editable.
