@@ -316,37 +316,6 @@ h3 {
   display: none;
 }
 
-.comic-story {
-  position: relative;
-  margin-block: 0 56px;
-  border: 2px solid var(--text);
-}
-
-.comic-story img {
-  width: 100%;
-  height: auto;
-}
-
-.comic-story figcaption {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  max-width: calc(100% - 40px);
-  padding: 12px 18px;
-  background: var(--text);
-  color: var(--background);
-  border: 2px solid var(--background);
-  font-family: var(--heading-font);
-  font-size: clamp(1.2rem, 3vw, 2rem);
-  font-weight: 800;
-  line-height: 1.1;
-  text-transform: uppercase;
-}
-
-.comic-story figcaption span {
-  display: block;
-}
-
 .objective:hover {
   transform: translateY(-2px);
 }
@@ -620,5 +589,6 @@ ilustración después. */
 
 
 }
+
 
 

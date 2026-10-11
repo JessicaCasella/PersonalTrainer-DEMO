@@ -6,6 +6,7 @@ Landing estática en español, con estética de novela gráfica adulta. HTML, CS
 
 - `index.html`: contenido, navegación y secciones.
 - `styles.css`: estilos organizados en bloques numerados, responsive y movimiento reducido.
+- `comic-experiment.css`: portada por líneas, texto en contorno y viñetas independientes de la rama experimental.
 - `script.js`: menú mobile y aparición de secciones.
 - `assets/`: ilustración optimizada y fuentes locales.
 - `DESIGN_BRIEF.md`: decisiones de diseño y datos pendientes.
@@ -49,5 +50,5 @@ Fuente: Barlow Condensed, peso 800, distribuida bajo SIL Open Font License. Ver 
 
 ## Git
 
-La carpeta recibida no tiene `.git`. No se inicializó ni se sincronizó el repositorio remoto en esta implementación.
+La versión base está en `main`. El experimento de portada y viñetas está en `codex/comic-motion`, en https://github.com/JessicaCasella/PersonalTrainer-DEMO.
 
