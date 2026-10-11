@@ -7,6 +7,8 @@ Landing estática en español, con estética de novela gráfica adulta. HTML, CS
 - `index.html`: contenido, navegación y secciones.
 - `styles.css`: estilos organizados en bloques numerados, responsive y movimiento reducido.
 - `comic-experiment.css`: portada por líneas, texto en contorno y viñetas independientes de la rama experimental.
+
+La portada experimental usa la ilustración como fondo y repite el mismo recurso en una capa con silueta CSS para superponer el personaje a algunos títulos en desktop. En mobile, el título completo queda delante y el texto decorativo detrás. No se descarga una imagen adicional para este efecto.
 - `script.js`: menú mobile y aparición de secciones.
 - `assets/`: ilustración optimizada y fuentes locales.
 - `DESIGN_BRIEF.md`: decisiones de diseño y datos pendientes.
